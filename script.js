@@ -108,9 +108,12 @@ function cadastrarProfissional() {
     };
 
     profissionais.push(novoProfissional);
-    mostrarProfissionais();
+    if (document.getElementById("listaProfissionais")) {
+  mostrarProfissionais();
+}
 
-    alert("Perfil publicado com sucesso!");
+   alert("Perfil publicado com sucesso!");
+window.location.href = "index.html";
 
     document.getElementById("nickname").value = "";
     document.getElementById("categoria").value = "";
@@ -134,4 +137,23 @@ document.getElementById("campoBusca").addEventListener("input", function () {
     mostrarProfissionais(filtrados);
 });
 
-mostrarProfissionais();
+const campoBusca = document.getElementById("campoBusca");
+
+if (campoBusca) {
+  campoBusca.addEventListener("input", function () {
+    const termo = this.value.toLowerCase();
+
+    const filtrados = profissionais.filter(p =>
+      p.nickname.toLowerCase().includes(termo) ||
+      p.categoria.toLowerCase().includes(termo) ||
+      p.cidade.toLowerCase().includes(termo) ||
+      p.descricao.toLowerCase().includes(termo)
+    );
+
+    mostrarProfissionais(filtrados);
+  });
+}
+
+if (document.getElementById("listaProfissionais")) {
+  mostrarProfissionais();
+}
