@@ -83,9 +83,16 @@ function cadastrarProfissional() {
     const fotosArquivos =
         document.getElementById("fotos").files;
 
-    const fotoPrincipalURL =
-        URL.createObjectURL(fotoPrincipalArquivo);
+    if (!nickname || !categoria || !cidade || !whatsapp || !descricao || !fotoPrincipalArquivo) {
+    alert("Preencha os campos principais.");
+    return;
+}
 
+const fotoPrincipalURL = URL.createObjectURL(fotoPrincipalArquivo);
+
+const fotosURL = Array.from(fotosArquivos).map(arquivo =>
+    URL.createObjectURL(arquivo)
+);
     const fotosURL =
         Array.from(fotosArquivos).map(arquivo =>
             URL.createObjectURL(arquivo)
