@@ -221,3 +221,12 @@ footer {
   color: white;
   margin-top: 40px;
 }
+
+.subtitulo-cadastro {
+  margin-bottom: 20px;
+  color: #555;
+}
+
+main {
+  min-height: 70vh;
+}

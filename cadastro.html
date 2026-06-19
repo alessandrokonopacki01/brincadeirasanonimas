@@ -1,31 +1,48 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cadastrar Profissional</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastrar Profissional</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-<header>
-  <div class="logo">Contrata Perfil</div>
-  <section class="cadastro" id="cadastro">
-  <h2>Cadastrar trabalhador</h2>
+  <header>
+    <div class="logo">Contrata Perfil</div>
 
-  <input type="text" id="nickname" placeholder="Nickname: exemplo @pedreirotop" />
-  <input type="text" id="categoria" placeholder="Categoria: Pedreiro, Manicure..." />
-  <input type="text" id="cidade" placeholder="Cidade" />
-  <input type="text" id="whatsapp" placeholder="WhatsApp com DDD" />
-  <textarea id="descricao" placeholder="Descreva seus serviços"></textarea>
-  <input type="text" id="fotoPrincipal" placeholder="Link da foto principal" />
-  <input type="text" id="fotos" placeholder="Links das fotos separados por vírgula" />
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="cadastro.html">Cadastrar Perfil</a>
+    </nav>
+  </header>
 
-  <button onclick="cadastrarProfissional()">Publicar perfil</button>
-</section>
+  <main>
+    <section class="cadastro" id="cadastro">
+      <h1>Cadastrar trabalhador</h1>
+      <p class="subtitulo-cadastro">
+        Crie seu perfil profissional para aparecer na vitrine do Contrata Perfil.
+      </p>
 
-  <nav>
-    <a href="index.html">Início</a>
-    <a href="cadastro.html">Cadastrar Perfil</a>
-  </nav>
-</header>
+      <input type="text" id="nickname" placeholder="Nickname: exemplo @pedreirotop" />
+      <input type="text" id="categoria" placeholder="Categoria: Pedreiro, Manicure..." />
+      <input type="text" id="cidade" placeholder="Cidade" />
+      <input type="text" id="whatsapp" placeholder="WhatsApp com DDD" />
+
+      <textarea id="descricao" placeholder="Descreva seus serviços"></textarea>
+
+      <input type="text" id="fotoPrincipal" placeholder="Link da foto principal" />
+      <input type="text" id="fotos" placeholder="Links das fotos separados por vírgula" />
+
+      <button onclick="cadastrarProfissional()">Publicar perfil</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>Contrata Perfil © 2026</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
