@@ -1,4 +1,4 @@
-let profissionais = [
+let profissionais = JSON.parse(localStorage.getItem("profissionais")) || [
     {
         nickname: "@pedreirotop",
         categoria: "Pedreiro / Reformas",
@@ -104,7 +104,11 @@ function cadastrarProfissional() {
 
     profissionais.push(novoProfissional);
 
-    alert("Perfil publicado com sucesso!");
+localStorage.setItem("profissionais", JSON.stringify(profissionais));
+
+alert("Perfil publicado com sucesso!");
+
+window.location.href = "index.html";
 
     document.getElementById("nickname").value = "";
     document.getElementById("categoria").value = "";
