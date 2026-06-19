@@ -124,19 +124,6 @@ window.location.href = "index.html";
     document.getElementById("fotos").value = "";
 }
 
-document.getElementById("campoBusca").addEventListener("input", function () {
-    const termo = this.value.toLowerCase();
-
-    const filtrados = profissionais.filter(p =>
-        p.nickname.toLowerCase().includes(termo) ||
-        p.categoria.toLowerCase().includes(termo) ||
-        p.cidade.toLowerCase().includes(termo) ||
-        p.descricao.toLowerCase().includes(termo)
-    );
-
-    mostrarProfissionais(filtrados);
-});
-
 const campoBusca = document.getElementById("campoBusca");
 
 if (campoBusca) {
