@@ -77,30 +77,20 @@ function cadastrarProfissional() {
     const cidade = document.getElementById("cidade").value;
     const whatsapp = document.getElementById("whatsapp").value;
     const descricao = document.getElementById("descricao").value;
-    const fotoPrincipalArquivo =
-        document.getElementById("fotoPrincipal").files[0];
 
-    const fotosArquivos =
-        document.getElementById("fotos").files;
+    const fotoPrincipalArquivo = document.getElementById("fotoPrincipal").files[0];
+    const fotosArquivos = document.getElementById("fotos").files;
 
-    if (!nickname || !categoria || !cidade || !whatsapp || !descricao || !fotoPrincipalArquivo) {
-    alert("Preencha os campos principais.");
-    return;
-}
-
-const fotoPrincipalURL = URL.createObjectURL(fotoPrincipalArquivo);
-
-const fotosURL = Array.from(fotosArquivos).map(arquivo =>
-    URL.createObjectURL(arquivo)
-);
-    const fotosURL =
-        Array.from(fotosArquivos).map(arquivo =>
-            URL.createObjectURL(arquivo)
-        );
     if (!nickname || !categoria || !cidade || !whatsapp || !descricao || !fotoPrincipalArquivo) {
         alert("Preencha os campos principais.");
         return;
     }
+
+    const fotoPrincipalURL = URL.createObjectURL(fotoPrincipalArquivo);
+
+    const fotosURL = Array.from(fotosArquivos).map(arquivo =>
+        URL.createObjectURL(arquivo)
+    );
 
     const novoProfissional = {
         nickname,
@@ -109,18 +99,12 @@ const fotosURL = Array.from(fotosArquivos).map(arquivo =>
         whatsapp,
         descricao,
         fotoPrincipal: fotoPrincipalURL,
-        fotos: fotosURL.length > 0
-            ? fotosURL
-            : [fotoPrincipalURL]
+        fotos: fotosURL.length > 0 ? fotosURL : [fotoPrincipalURL]
     };
 
     profissionais.push(novoProfissional);
-    if (document.getElementById("listaProfissionais")) {
-  mostrarProfissionais();
-}
 
-   alert("Perfil publicado com sucesso!");
-window.location.href = "index.html";
+    alert("Perfil publicado com sucesso!");
 
     document.getElementById("nickname").value = "";
     document.getElementById("categoria").value = "";
@@ -130,7 +114,6 @@ window.location.href = "index.html";
     document.getElementById("fotoPrincipal").value = "";
     document.getElementById("fotos").value = "";
 }
-
 const campoBusca = document.getElementById("campoBusca");
 
 if (campoBusca) {
