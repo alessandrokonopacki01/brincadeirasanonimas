@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contrata Perfil</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <div class="logo">Contrata Perfil</div>
+  <nav>
+    <a href="#inicio">Início</a>
+    <a href="#cadastro">Cadastrar Perfil</a>
+  </nav>
+</header>
+
+<section class="hero" id="inicio">
+  <h1>Encontre profissionais locais pelo apelido</h1>
+  <p>Veja fotos dos trabalhos, informações e chame direto no WhatsApp.</p>
+</section>
+
+<section class="busca">
+  <input type="text" id="campoBusca" placeholder="Buscar por serviço, cidade ou nickname..." />
+</section>
+
+<main>
+  <section class="cards" id="listaProfissionais"></section>
+</main>
+
+<section class="cadastro" id="cadastro">
+  <h2>Cadastrar trabalhador</h2>
+
+  <input type="text" id="nickname" placeholder="Nickname: exemplo @pedreirotop" />
+  <input type="text" id="categoria" placeholder="Categoria: Pedreiro, Manicure..." />
+  <input type="text" id="cidade" placeholder="Cidade" />
+  <input type="text" id="whatsapp" placeholder="WhatsApp com DDD" />
+  <textarea id="descricao" placeholder="Descreva seus serviços"></textarea>
+  <input type="text" id="fotoPrincipal" placeholder="Link da foto principal" />
+  <input type="text" id="fotos" placeholder="Links das fotos separados por vírgula" />
+
+  <button onclick="cadastrarProfissional()">Publicar perfil</button>
+</section>
+
+<div class="modal" id="modalPerfil">
+  <div class="modal-conteudo">
+    <button class="fechar" onclick="fecharModal()">X</button>
+
+    <h2 id="modalNickname"></h2>
+    <p id="modalCategoria"></p>
+    <p id="modalCidade"></p>
+
+    <h3>Sobre</h3>
+    <p id="modalDescricao"></p>
+
+    <h3>Fotos dos trabalhos</h3>
+    <div class="galeria" id="modalGaleria"></div>
+
+    <a id="modalWhatsapp" class="btn-whats" target="_blank">Chamar no WhatsApp</a>
+  </div>
+</div>
+
+<footer>
+  <p>Contrata Perfil © 2026</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
